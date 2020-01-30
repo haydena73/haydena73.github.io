@@ -26,3 +26,12 @@ p {
   color: black;
 }
 
+ul {
+  font-size: 12;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  padding-right: 80px;
+  padding-left: 80px;
+
+  color: black;
+}
