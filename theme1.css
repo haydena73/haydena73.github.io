@@ -1,22 +1,28 @@
 body {
-    background-color: darkslategrey;
+    background-color: rgb(171, 196, 196);
     color: azure;
     font-size: 1.1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 h1 {
-    color: coral;
+    color: rgb(83, 80, 255);
 }
 h2 {
-    color: #009;
-    font-size: 1em;
-    margin-bottom: .3em;
+    color: rgb(0, 143, 153);
+    font-size: 2em;
+    margin-bottom: .7em;
     text-align: center;
-    text-decoration: underline;
-p {
-  font-size: 12;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 
-.coolthing {
-   color: white;
-    font-size: 10em;
+p {
+  font-size: 12;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  padding-right: 80px;
+  padding-left: 80px;
+
+  color: black;
 }
+
