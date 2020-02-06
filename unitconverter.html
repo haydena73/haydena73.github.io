@@ -6,10 +6,97 @@
 
 </HEAD>
 
-<H1> Unit Converter <H1>
+<CENTER><H1> Unit Converter
 
+<Center><p>
+  <p>
+  <label>Feet</label>
+  <input id="inputFeet" type="number" placeholder="Feet" oninput="LengthConverterFeet(this.value)" onchange="LengthConverterFeet(this.value)">
+</p> 
+  
+  <p>
+  <label>Inches</label>
+  <input id="inputInches" type="number" placeholder="Inches" oninput="LengthConverterInches(this.value)" onchange="LengthConverterInches(this.value)">
+</p>
+  
+  <p>
+  <label>Yards</label>
+  <input id="inputYards" type="number" placeholder="Yards" oninput="LengthConverterYards(this.value)" onchange="LengthConverterYards(this.value)">
+</p>
+  
+   <p>
+  <label>Miles</label>
+  <input id="inputMiles" type="number" placeholder="Miles" oninput="LengthConverterMiles(this.value)" onchange="LengthConverterMiles(this.value)">
+</p>
+  
+   <p>
+  <label>Meters</label>
+  <input id="inputMeters" type="number" placeholder="Meters" oninput="LengthConverterMeters(this.value)" onchange="LengthConverterMeters(this.value)">
+</p>
+  
+   <p>
+  <label>Kilometers</label>
+  <input id="inputKilometers" type="number" placeholder="Kilometers" oninput="LengthConverterKilometers(this.value)" onchange="LengthConverterKilometers(this.value)">
+</p>
+  
+  
 
-
+  <script>
+    
+    
+function LengthConverterFeet(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputInches").value = valnum*12;
+    document.getElementById("inputYards").value = valnum/3;
+    document.getElementById("inputMiles").value = valnum/5280;
+    document.getElementById("inputMeters").value = valnum*0.3048;
+    document.getElementById("inputKilometers").value = valnum*0.0003048;
+}
+    
+function LengthConverterInches(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputFeet").value = valnum/12;
+    document.getElementById("inputYards").value = valnum*0.0277778;
+    document.getElementById("inputMiles").value = valnum/63360;
+    document.getElementById("inputMeters").value = valnum*0.0254;
+    document.getElementById("inputKilometers").value = valnum*2.54e-5;
+}
+    
+function LengthConverterYards(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputFeet").value = valnum*3;
+    document.getElementById("inputInches").value = valnum*36;
+    document.getElementById("inputMiles").value = valnum*0.000568182;
+    document.getElementById("inputMeters").value = valnum*0.9144;
+    document.getElementById("inputKilometers").value = valnum*0.0009144;
+}
+    
+function LengthConverterMiles(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputFeet").value = valnum*5280;
+    document.getElementById("inputInches").value = valnum*63360;
+    document.getElementById("inputYards").value = valnum*1760;
+    document.getElementById("inputMeters").value = valnum*1609.34;
+    document.getElementById("inputKilometers").value = valnum*1.60934;
+}
+    
+function LengthConverterMeters(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputFeet").value = valnum*3.28084;
+    document.getElementById("inputInches").value = valnum*39.3701;
+    document.getElementById("inputYards").value = valnum*1.09361;
+    document.getElementById("inputMiles").value = valnum*0.000621371;
+    document.getElementById("inputKilometers").value = valnum*0.001;
+}
+    
+function LengthConverterKilometers(valnum) {
+  var valnum = valnum;
+    document.getElementById("inputFeet").value = valnum*3280.84;
+    document.getElementById("inputInches").value = valnum*39370.1;
+    document.getElementById("inputYards").value = valnum*1093.61;
+    document.getElementById("inputMiles").value = valnum*0.621371;
+    document.getElementById("inputMeters").value = valnum*1000;
+}
+</script>
+  
 </HTML>
-
- 
