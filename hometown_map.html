@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Hometown Map</title>
+    <style>
+   
+      #map {
+        height: 50%;
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div id="map"></div>
+    
+    
+    <script>
+      
+      
+      var alpine = {lat: 40.4533, lng: -111.7780};
+      var home = {lat: 40.455001, lng: -111.760132};
+      var contentstring_home = "<b>Home:</b> Moved here in '95"
+      var church = {lat: 40.452557, lng: -111.759474};
+      var contentstring_church = "<b>Village Way Chapel:</b> Complete with carpeted gym floors"
+      var school = {lat: 40.456713, lng: -111.770307};
+      var contentstring_school = "<b>Alpine Elementary:</b> Where I peaked"
+      var moyle = {lat: 40.464629, lng: -111.766922};
+      var contentstring_moyle = "<b>Moyle Park:</b> Home of pioneer stone mason John Row Moyle"
+      var kiss = {lat: 40.438071, lng: -111.790000};
+      var contentstring_kiss = "<b>My First Kiss:</b> #Cringey"
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: alpine
+        });
+
+        
+            
+        var infowindow_home = new google.maps.InfoWindow({
+          content: contentstring_home
+        });
+        var marker_home = new google.maps.Marker({
+          position: home,
+          map: map,
+          title: 'Home'
+        });
+        marker_home.addListener('click', function() {
+          infowindow_home.open(map, marker_home);
+        });
+        
+        
+        
+        var infowindow_church = new google.maps.InfoWindow({
+          content: contentstring_church
+        });
+        var marker_church = new google.maps.Marker({
+          position: church,
+          map: map,
+          title: 'Church'
+        });
+        marker_church.addListener('click', function() {
+          infowindow_church.open(map, marker_church);
+        });
+        
+        
+        
+        var infowindow_school = new google.maps.InfoWindow({
+          content: contentstring_school
+        });
+        var marker_school = new google.maps.Marker({
+          position: school,
+          map: map,
+          title: 'School'
+        });
+        marker_school.addListener('click', function() {
+          infowindow_school.open(map, marker_school);
+        });
+        
+        
+        
+        var infowindow_moyle = new google.maps.InfoWindow({
+          content: contentstring_moyle
+        });
+        var marker_moyle = new google.maps.Marker({
+          position: moyle,
+          map: map,
+          title: 'Moyle'
+        });
+        marker_moyle.addListener('click', function() {
+          infowindow_moyle.open(map, marker_moyle);
+        });
+        
+        
+        var infowindow_kiss = new google.maps.InfoWindow({
+          content: contentstring_kiss
+        });
+        var marker_kiss = new google.maps.Marker({
+          position: kiss,
+          map: map,
+          title: 'Kiss'
+        });
+        marker_kiss.addListener('click', function() {
+          infowindow_kiss.open(map, marker_kiss);
+        });
+        
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXS6eLxCWdf31JokswS3GbO582iuY0PqI&callback=initMap">
+    </script>
+  </body>
+</html>
