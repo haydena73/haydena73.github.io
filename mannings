@@ -1,0 +1,103 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Unit Converter</TITLE>
+
+</HEAD>
+
+<CENTER><H1> Manning's Equation
+
+<CENTER><H2> Assignment #3, 2/13/2020
+
+<p> Mannings Equation explains the relationship between slope (s), hydraulic radius (R), channel roughness (n), and flow velocity (v).  <p/>  
+  
+<link rel="stylesheet" type="text/css" href="theme1.css">
+    
+    
+ <BODY BGCOLOR="FFFFFF">
+    
+ <CENTER><IMG SRC="mannings.gif" ALIGN="BOTTOM"> </CENTER>
+  
+  
+<Center><p>
+  
+  <p>Units</p>
+  <input type="radio" id="ST" name="radio" value="ST" checked>
+  <label for="ST">Standard</label><br>
+  <input type="radio" id="SI" name="radio" value="SI">
+  <label for="SI">SI</label><br>
+
+
+  
+  <p>
+  <label>Slope (S)</label>
+  <input id="inputslope" type="number" placeholder="Slope" 
+</p> 
+  
+  <p>
+  <label>Roughness (n)</label>
+  <input id="inputn" type="number" placeholder="n" 
+</p>
+  
+  <p>
+  <label>Width</label>
+  <input id="inputw" type="number" placeholder="Feet/Meters" 
+</p>
+  
+   <p>
+  <label>Depth</label>
+  <input id="inputd" type="number" placeholder="Feet/Meters" 
+</p>
+  
+<p id="vel"></p>
+  
+<button type="button" id="button" >Calculate Velocity</button>
+  
+
+  <script>
+  var s; 
+  var n; 
+  var w; 
+  var d;  
+  var a; 
+  var p; 
+  var r; 
+  var v;
+  var k;
+  var ST;
+  var SI;
+  var rp;
+  var sp;
+    
+ST = document.getElementById("ST");
+SI = document.getElementById("SI");
+
+if (document.getElementById('ST').checked) {
+    k=1.49;
+} else {
+    k=1;
+}
+    
+  function getInput() {  
+  s = Number(document.getElementById("inputslope").value);
+  n = Number(document.getElementById("inputn").value);
+  w = Number(document.getElementById("inputw").value);
+  d = Number(document.getElementById("inputd").value);  
+  a = w * d
+  p = (2 * d) + w
+  r = a / p
+  rp = Math.pow(r,.66666)
+  sp = Math.pow(s,.5)
+  v = (k/n) * rp * sp
+  }
+function Mannings()  {  
+
+  document.getElementById("vel").innerHTML = v * 1  
+  
+}
+document.getElementById("button").onclick = function() 
+{getInput();
+Mannings();
+}
+    
