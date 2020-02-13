@@ -8,8 +8,6 @@
 
 <CENTER><H1> Manning's Equation
 
-<CENTER><H2> Assignment #3, 2/13/2020
-
 <p> Mannings Equation explains the relationship between slope (s), hydraulic radius (R), channel roughness (n), and flow velocity (v).  <p/>  
   
 <link rel="stylesheet" type="text/css" href="theme1.css">
@@ -17,15 +15,15 @@
     
  <BODY BGCOLOR="FFFFFF">
     
- <CENTER><IMG SRC="mannings.gif" ALIGN="BOTTOM"> </CENTER>
+ <CENTER><IMG SRC="missionaries.jpg" ALIGN="BOTTOM"> </CENTER>
   
   
 <Center><p>
   
   <p>Units</p>
-  <input type="radio" id="ST" name="radio" value="ST" checked>
+  <input type="radio" id="ST" name="radio" checked>
   <label for="ST">Standard</label><br>
-  <input type="radio" id="SI" name="radio" value="SI">
+  <input type="radio" id="SI" name="radio">
   <label for="SI">SI</label><br>
 
 
@@ -49,9 +47,9 @@
   <label>Depth</label>
   <input id="inputd" type="number" placeholder="Feet/Meters" 
 </p>
-  
+<p> The calculated velocity is  
 <p id="vel"></p>
-  
+ 
 <button type="button" id="button" >Calculate Velocity</button>
   
 
@@ -69,14 +67,17 @@
   var SI;
   var rp;
   var sp;
+  var unit;  
     
 ST = document.getElementById("ST");
 SI = document.getElementById("SI");
 
 if (document.getElementById('ST').checked) {
     k=1.49;
+    unit= "f/s";
 } else {
     k=1;
+    unit= "m/s";
 }
     
   function getInput() {  
@@ -100,4 +101,13 @@ document.getElementById("button").onclick = function()
 {getInput();
 Mannings();
 }
+     
     
+  
+  
+    
+    
+
+</script>
+  
+</HTML>
