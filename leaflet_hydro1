@@ -1,7 +1,7 @@
 <html>
 <head>
   
-  <title>Hayden's First Leaflet</title>
+  <title>Leaflet+Hydroshare</title>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -15,16 +15,16 @@
   
 </head>
 <body>
-<CENTER><H1> Hometown Map
+<CENTER><H1> Points and States of Interest
 
 <p> Hayden Andersen <p/> 
 <p> CE EN 514 <p/> 
-<p> 2/18/2020 <p/>   
+<p> 2/20/2020 <p/>   
 <center><div id="mapid" style="width: 600px; height: 400px;"></div>
   
 <script>
   
- 	var mymap = L.map('mapid').setView([40.453561, -111.777538], 13);
+ 	var mymap = L.map('mapid').setView([39.827602, -98.580291], 4);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -36,44 +36,21 @@
 		zoomOffset: -1
 	}).addTo(mymap);
  
-      var alpine = {lat: 40.4533, lng: -111.7780};
-      var home = {lat: 40.455001, lng: -111.760132};
-      var contentstring_home = "<b>Home:</b> Moved here in '95"
-      var church = {lat: 40.452557, lng: -111.759474};
-      var contentstring_church = "<b>Village Way Chapel:</b> Complete with carpeted gym floors"
-      var school = {lat: 40.456713, lng: -111.770307};
-      var contentstring_school = "<b>Alpine Elementary:</b> Where I peaked"
-      var moyle = {lat: 40.464629, lng: -111.766922};
-      var contentstring_moyle = "<b>Moyle Park:</b> Home of pioneer stone mason John Row Moyle"
-      var kiss = {lat: 40.438071, lng: -111.790000};
-      var contentstring_kiss = "<b>My First Kiss:</b> #Cringey"
+var wmsLayerPOI = L.tileLayer.wms('https://geoserver.hydroshare.org/geoserver/HS-ea345279f89e4be7bf3e6a807d32e68c/wms?', {
+    layers: 'POI',
+    crossOrigin: false,
+    format: 'image/png',
+    transparent: true,
+    
+}).addTo(mymap);   
   
-L.marker(kiss).addTo(mymap)
-		.bindPopup(contentstring_kiss);
-L.marker(church).addTo(mymap)
-		.bindPopup(contentstring_church);
-L.marker(school).addTo(mymap)
-		.bindPopup(contentstring_school);
-L.marker(home).addTo(mymap)
-		.bindPopup(contentstring_home);  
-
-var circle = L.circle(home, {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 800
-}).addTo(mymap);  
-  
-circle.bindPopup("Areas within 10 minutes walking from my house");  
-
-var polygon = L.polygon([
-    [40.455378, -111.760182],
-    [40.455173, -111.759555],
-    [40.454607, -111.759788],
-    [40.454918, -111.760475] 
-]).addTo(mymap);
-  
-polygon.bindPopup("Property Boundary");
+var wmsLayerSOI = L.tileLayer.wms('https://geoserver.hydroshare.org/geoserver/HS-ea345279f89e4be7bf3e6a807d32e68c/wms?', {
+    layers: 'SOI',
+    crossOrigin: false,
+    format: 'image/png',
+    transparent: true,
+    
+}).addTo(mymap);    
 </script>
 
 
